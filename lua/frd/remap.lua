@@ -1,9 +1,13 @@
-vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.g.mapleader = ' '
+vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
 -- keeps cursor middle of screen while jumping
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- keeps cursor middle of screen while jumping paragraphs
+vim.keymap.set("n", "{", "{zz")
+vim.keymap.set("n", "}", "}zz")
 
 -- keeps cursor middle of screen while searching
 vim.keymap.set("n", "n", "nzzzv")

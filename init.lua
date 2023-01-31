@@ -1,1 +1,1 @@
-require("frd")
+require('frd')

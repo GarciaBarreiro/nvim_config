@@ -20,6 +20,3 @@ vim.opt.scrolloff = 8
 vim.signcolumn = "yes"
 
 vim.opt.updatetime = 500
-
--- leader key
-vim.g.mapleader = " "
