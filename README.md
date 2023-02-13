@@ -6,6 +6,8 @@ Mostly copied from [this video](https://www.youtube.com/watch?v=w7i4amO_zaE), Gi
 
 Neovim 0.9 required.
 
+``npm`` package required too.
+
 ## Keyboard Mappings
 - ```<leader> = ' '```
 
