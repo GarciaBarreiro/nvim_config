@@ -3,14 +3,22 @@ local lsp = require('lsp-zero')
 lsp.preset('recommended')
 
 lsp.ensure_installed({
-	-- 'tsserver',
-	-- 'eslint',
-	'sumneko_lua',
+	'tsserver',
+	'eslint',
+	'lua_ls',
 	'rust_analyzer',
+    'tailwindcss',
+    'html',
+})
+
+require("mason").setup()
+
+require("mason-lspconfig").setup({
+    ensure_installed = { 'lua_ls', 'tsserver', 'eslint', 'rust_analyzer', 'tailwindcss', 'html' }
 })
 
 -- Fix Undefined global 'vim'
-lsp.configure('sumneko_lua', {
+lsp.configure('lua_ls', {
 	settings = {
 		Lua = {
 			diagnostics = {
@@ -19,6 +27,19 @@ lsp.configure('sumneko_lua', {
 		}
 	}
 })
+
+lsp.configure('tailwindcss', {})
+
+lsp.configure('tsserver', {
+    settings = {
+        completions = {
+            completeFunctionCalls = true
+        }
+    }
+})
+
+--local nvim_lsp = require("lspconfig")
+--nvim_lsp.tailwindcss.setup{}
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
@@ -48,3 +69,14 @@ lsp.setup()
 vim.diagnostic.config({
 	virtual_text = true
 })
+
+--require("mason").setup()
+--local mlsp = require('mason-lspconfig')
+--mlsp.setup{
+--    ensure_installed = { 'tsserver', 'eslint', 'lua_ls', 'rust_analyzer', 'tailwindcss', 'html' },
+--}
+--mlsp.setup_handlers {
+--    function (server)
+--        require('lspconfig')[server].setup()
+--    end
+--}
