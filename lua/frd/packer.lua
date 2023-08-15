@@ -40,7 +40,7 @@ return require('packer').startup(function(use)
 
 			-- Autocompletion
 			{'hrsh7th/nvim-cmp'},         -- Required
-			{'hrsh7th/cmp-buffer'},       -- Optional
+			{'GarciaBarreiro/cmp-buffer'},-- Mine, changed RegEx
 			{'hrsh7th/cmp-path'},         -- Optional
 			{'saadparwaiz1/cmp_luasnip'}, -- Optional
 			{'hrsh7th/cmp-nvim-lsp'},     -- Required
@@ -51,6 +51,8 @@ return require('packer').startup(function(use)
 			{'rafamadriz/friendly-snippets'}, -- Optional
 		}
 	}
+
+    use ('GarciaBarreiro/nvim-pandoc')
 
     if packer_bootstrap then
         require('packer').sync()
