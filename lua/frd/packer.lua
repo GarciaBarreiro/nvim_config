@@ -40,7 +40,7 @@ return require('packer').startup(function(use)
 
 			-- Autocompletion
 			{'hrsh7th/nvim-cmp'},         -- Required
-			{'GarciaBarreiro/cmp-buffer'},-- Mine, changed RegEx
+			{'GarciaBarreiro/cmp-buffer', branch = 'keyword_pattern'},-- Mine, changed RegEx
 			{'hrsh7th/cmp-path'},         -- Optional
 			{'saadparwaiz1/cmp_luasnip'}, -- Optional
 			{'hrsh7th/cmp-nvim-lsp'},     -- Required
