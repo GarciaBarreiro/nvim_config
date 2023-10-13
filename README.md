@@ -27,3 +27,7 @@ Neovim 0.9 required.
 - ```<leader>pf```: Find all files
 - ```<C-p>```: Find git files
 - ```<leader>ps```: Search strings using grep (requires [ripgrep](https://github.com/BurntSushi/ripgrep))
+
+## nvim-pandoc
+- ```<leader>pr```: Exec ```:PandocRead```
+- ```<leader>pw```: Write file and exec ```:PandocWrite```
