@@ -1,0 +1,21 @@
+return {
+  {
+    'nvim-telescope/telescope.nvim', version = '0.2.1',
+    dependencies = {
+        'nvim-lua/plenary.nvim',
+        -- optional but recommended
+        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    }
+  },
+  {
+    'nvim-treesitter/nvim-treesitter',
+    lazy = false,
+    build = ':TSUpdate'
+  },
+  'tpope/vim-fugitive',
+  'neovim/nvim-lspconfig',
+  {
+    "mason-org/mason.nvim",
+    opts = {}
+  }
+}

@@ -1,13 +1,8 @@
-require'nvim-treesitter.configs'.setup {
-	ensure_installed = { 'vimdoc', 'javascript', 'typescript', 'c', 'lua', 'rust', 'css', 'html' },
+require'nvim-treesitter'.setup {
+  -- Directory to install parsers and queries to (prepended to `runtimepath` to have priority)
+  install_dir = vim.fn.stdpath('data') .. '/site',
+}
 
-	sync_intall = false,
-
-	auto_install = true,
-
-	highlight = {
-		enable = true,
-
-		additional_vim_regex_highlighting = false,
-	},
+require'nvim-treesitter'.install{
+  'vimdoc', 'c', 'lua', 'rust'
 }
