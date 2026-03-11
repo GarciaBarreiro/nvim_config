@@ -4,5 +4,23 @@ require'nvim-treesitter'.setup {
 }
 
 require'nvim-treesitter'.install{
-  'vimdoc', 'c', 'lua', 'rust'
+  'vim', 'vimdoc', 'c', 'lua', 'rust'
 }
+
+-- vim.api.nvim_create_autocmd('User', { pattern = 'TSUpdate',
+-- callback = function()
+--   require('nvim-treesitter.parsers').lua.install_info.generate = true
+-- end})
+
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = { 'vim', 'vimdoc', 'c', 'lua', 'rust' },
+    callback = function()
+        -- syntax highlighting, provided by Neovim
+        vim.treesitter.start()
+        -- folds, provided by Neovim (I don't like folds)
+        -- vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+        -- vim.wo.foldmethod = 'expr'
+        -- indentation, provided by nvim-treesitter
+        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    end,
+})

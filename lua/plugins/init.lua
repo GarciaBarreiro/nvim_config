@@ -15,7 +15,18 @@ return {
   'tpope/vim-fugitive',
   'neovim/nvim-lspconfig',
   {
-    "mason-org/mason.nvim",
+    'mason-org/mason.nvim',
     opts = {}
-  }
+  },
+  {
+    'hrsh7th/nvim-cmp',
+    dependencies = {
+      {
+        'GarciaBarreiro/cmp-buffer',
+        branch = 'keyword_pattern'
+      },
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-path',
+    }
+  },
 }
